@@ -1,0 +1,63 @@
+.app-header {
+  background: #ffff;
+  height: 60px;
+  position: relative;
+  section.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  box-shadow: 0 2px 4px 3px hsl(0deg 0% 87% / 50%);
+
+  .triangle {
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    transform: rotate(45deg);
+    width: 25px;
+    height: 25px;
+    left: 39%;
+    top: -6%;
+    z-index: 1;
+  }
+  .lang-container {
+    display: flex;
+    flex-direction: column;
+    // height: 70px;
+    // width: 50px;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    position: absolute;
+    background-color: #fff;
+    transform: translate(-41%, 10%);
+    z-index: 10;
+
+    .lang-opts {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 120px;
+      height: 115px;
+      z-index: 2;
+      background-color: #fff;
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        // text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      div:first-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      > div:hover {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+}
