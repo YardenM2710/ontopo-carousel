@@ -2,11 +2,15 @@
   <transition :name="transitionEffect">
     <article :key="currSlide" class="carousel-item" :class="getSlideDir" v-if="currSlide === index">
       <img :src="slide.imgUrl" />
+
       <div class="carousel-item-details" :class="getSlideClass">
         <div class="item-title">{{ formattedTitle }}</div>
         <div class="item-action">
           <a :href="slide.path">{{ formattedBtn }}</a>
         </div>
+      </div>
+      <div class="img-dots">
+        <span v-for="dot in length" :key="dot" @click="$emit('setSlide', dot)" :class="{ selected: isSelected(dot) }"></span>
       </div>
     </article>
   </transition>
@@ -14,9 +18,14 @@
 
 <script>
 export default {
-  props: ['slide', 'index', 'currSlide', 'transitionName', 'lang', 'direction'],
+  props: ['slide', 'index', 'currSlide', 'transitionName', 'lang', 'direction', 'length'],
   data() {
     return {}
+  },
+  methods: {
+    isSelected(dot) {
+      return this.currSlide === dot - 1
+    }
   },
   computed: {
     transitionEffect() {
