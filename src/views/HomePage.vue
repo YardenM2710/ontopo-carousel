@@ -7,11 +7,6 @@
 <script>
 import Carousel from '../components/Carousel.vue'
 export default {
-  data() {
-    return {
-      // slides: null
-    }
-  },
   async created() {
     await this.$store.dispatch('loadSlides')
   },
@@ -23,5 +18,3 @@ export default {
   components: { Carousel }
 }
 </script>
-
-<style></style>
