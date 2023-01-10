@@ -135,10 +135,14 @@
   top: 0;
   left: 2px;
   transition: 0.3s;
+  width: 20%;
   cursor: pointer;
   img {
-    width: 30%;
+    width: 20%;
     transition: 0.3s;
+    @media (max-width: 568px) {
+      width: 60%;
+    }
   }
   img:hover {
     transform: scale(1.1);
@@ -156,6 +160,9 @@ form {
   width: 30%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
+  @media (max-width: 568px) {
+    width: 80%;
+  }
   input[type='text'] {
     width: 70%;
     padding: 9px 5px;

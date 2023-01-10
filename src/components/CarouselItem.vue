@@ -14,7 +14,6 @@
       <input v-model="newUrl" placeholder="Enter new image url" type="text" />
       <button @click="isEdit = false" type="submit">Change</button>
     </form>
-
     <div v-else @click="isEdit = true" class="edit">
       <img src="@/client/assets/edit.png" alt="" />
     </div>
