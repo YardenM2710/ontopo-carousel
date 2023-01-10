@@ -5,6 +5,8 @@ This is an image carousel i made in vue3 & scss without using UI libraries (Mate
 
 The Carousel data is being fetched from a Node js server
 
+I've added an "Slide edit" feature where you can insert an image url to edit the slides image
+
 Enjoy :)
 
 
