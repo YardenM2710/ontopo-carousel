@@ -1,29 +1,25 @@
-# vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+# Ontopo Carousel
 
-## Recommended IDE Setup
+This is an image carousel i made in vue3 & scss without using UI libraries (Material, Quasar, Bootstrap, etc...)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Enjoy :)
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Demo
 
-## Project Setup
 
-```sh
+https://carousel-a9dh.onrender.com/#/
+
+
+## Install
+git clone https://github.com/YardenM2710/ontopo-carousel 
+
+cd ontopo
+
 npm install
-```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+## 
+![Logo](https://www.ontopo.co.il/imgs/app/logo.svg)
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
