@@ -59,5 +59,12 @@
         background-color: #e8e8e8;
       }
     }
+
+    @media (max-width: 768px) {
+      right: -45px;
+      .triangle {
+        display: none;
+      }
+    }
   }
 }
