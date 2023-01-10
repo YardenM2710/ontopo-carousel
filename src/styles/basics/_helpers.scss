@@ -206,7 +206,15 @@
   padding-inline-start: 100px;
 }
 
-@media (max-width: 568px) {
+@media (max-width: $tablet-breakpoint) {
+  .he {
+    padding-inline-end: 20px;
+  }
+  .en {
+    padding-inline-start: 20px;
+  }
+}
+@media (max-width: $mobile-breakpoint) {
   .he {
     padding-inline-end: 20px;
   }

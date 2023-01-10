@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="slides" class="container">
     <Carousel :slides="slides" />
   </div>
 </template>
@@ -9,13 +9,17 @@ import Carousel from '../components/Carousel.vue'
 export default {
   data() {
     return {
-      slides: null
+      // slides: null
     }
   },
   async created() {
-    this.slides = await this.$store.dispatch('loadSlides')
+    await this.$store.dispatch('loadSlides')
   },
-  computed: {},
+  computed: {
+    slides() {
+      return this.$store.getters.slides
+    }
+  },
   components: { Carousel }
 }
 </script>

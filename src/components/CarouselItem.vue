@@ -1,30 +1,41 @@
 <template>
-  <Transition :name="transitionEffect">
+  <TransitionGroup :name="transitionEffect">
     <article :key="currSlide" class="carousel-item" :class="getSlideDir" v-if="currSlide === index">
       <img :src="slide.imgUrl" />
-
       <div class="carousel-item-details" :class="getSlideClass">
         <div class="item-title">{{ formattedTitle }}</div>
         <div class="item-action">
           <a :href="slide.path">{{ formattedBtn }}</a>
         </div>
       </div>
-      <!-- <div class="slide-indicator">
-        <span v-for="dot in length" :key="dot" @click="$emit('setSlide', dot)" :class="{ selected: isSelected(dot) }"></span>
-      </div> -->
     </article>
-  </Transition>
+
+    <form v-if="isEdit" class="slide-edit" @submit="editSlide">
+      <input v-model="newUrl" placeholder="Enter new image url" type="text" />
+      <button @click="isEdit = false" type="submit">Change</button>
+    </form>
+
+    <div v-else @click="isEdit = true" class="edit">
+      <img src="@/client/assets/edit.png" alt="" />
+    </div>
+  </TransitionGroup>
 </template>
 
 <script>
 export default {
   props: ['slide', 'index', 'currSlide', 'lang', 'direction', 'length'],
   data() {
-    return {}
+    return {
+      newUrl: '',
+      isEdit: false
+    }
   },
+  emits: ['changeUrl', 'setSlide'],
   methods: {
-    isSelected(dot) {
-      return this.currSlide === dot - 1
+    editSlide() {
+      if (!this.newUrl) return
+      this.$emit('changeUrl', this.newUrl)
+      this.newUrl = ''
     }
   },
   computed: {

@@ -1,11 +1,11 @@
 <template>
   <div v-if="slides" class="carousel-container">
     <div class="carousel">
-      <CarouselItem @setSlide="setSlide" :direction="direction" :lang="lang" v-for="(slide, idx) in slides" :key="`item-${idx}`" :currSlide="currSlide" :index="idx" :slide="slide" :length="slides.length" />
+      <CarouselItem @changeUrl="editSlide" @setSlide="setSlide" :direction="direction" :lang="lang" v-for="(slide, idx) in slides" :key="`item-${idx}`" :currSlide="currSlide" :index="idx" :slide="slide" :length="slides.length" />
       <BtnActions @next="next" @prev="prev" />
     </div>
     <div class="slide-indicator">
-      <span v-for="dot in slides.length" :key="dot" @click="setSlide(dot)" :class="{ selected: isSelected(dot) }"></span>
+      <span v-for="swiper in slides.length" :key="swiper" @click="setSlide(swiper)" :class="{ selected: isSelected(swiper) }"></span>
     </div>
   </div>
 </template>
@@ -28,8 +28,11 @@ export default {
     }
   },
   methods: {
-    isSelected(dot) {
-      return this.currSlide === dot - 1
+    editSlide(newUrl) {
+      this.$store.dispatch({ type: 'editSlide', slide: this.currSlide, newUrl })
+    },
+    isSelected(swiper) {
+      return this.currSlide === swiper - 1
     },
     setSlide(selectedSlide) {
       this.currSlide = selectedSlide - 1
@@ -45,5 +48,3 @@ export default {
   }
 }
 </script>
-
-<style></style>

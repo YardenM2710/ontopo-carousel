@@ -5,10 +5,6 @@
   padding-right: 10px;
   padding: 20px;
 
-  @media (max-width: 868px) {
-    max-width: $mobile-breakpoint !important;
-  }
-
   @include for-mobile-layout {
     max-width: initial;
   }

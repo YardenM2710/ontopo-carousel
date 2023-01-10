@@ -7,6 +7,14 @@
   overflow: hidden;
   border-radius: 6px;
   position: relative;
+  transform: translateY(70px);
+
+  @media (max-width: 768px) {
+    height: 307px;
+  }
+  @media (max-width: 568px) {
+    height: 257px;
+  }
 
   .carousel {
     position: relative;
@@ -23,7 +31,7 @@
       justify-content: space-between;
       height: 100%;
 
-      @media (max-width: 868px) {
+      @media (max-width: 768px) {
         display: none;
       }
     }
@@ -73,18 +81,13 @@
 
         @media (max-width: 568px) {
           .item-title {
-            // font-size: em(40px);
-            color: white;
+            line-height: 1;
           }
           .item-action {
             padding: 8px 15px;
             font-size: 12px;
           }
         }
-      }
-
-      @media (max-width: 568px) {
-        height: 70%;
       }
     }
     .btn {
@@ -118,10 +121,66 @@
       border-radius: 50%;
     }
     @media (max-width: 568px) {
-      bottom: 120px;
+      bottom: 15px;
     }
   }
   .selected {
     background-color: rgb(255, 255, 255) !important;
+  }
+}
+
+.edit {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  img {
+    width: 30%;
+    transition: 0.3s;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  z-index: 20;
+  width: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  input[type='text'] {
+    width: 70%;
+    padding: 9px 5px;
+
+    border: none;
+    border-bottom: 2px solid #ffff;
+    transition: 0.3s;
+  }
+
+  button {
+    width: 30%;
+    padding: 7px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #27aae1;
+    color: white;
+  }
+
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid #27aae1;
   }
 }
