@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { carouselService } from '../services/carousel.service.js'
 
 const store = createStore({
   strict: true,
@@ -15,11 +16,22 @@ const store = createStore({
     }
   },
   mutations: {
+    setSlides(state, { slides }) {
+      state.slides = slides
+    },
     setLang(state, { lang }) {
-      // state.lang = state.lang === 'he' ? 'en' : 'he'
       state.lang = lang
-
-      console.log('state.lang ', state.lang)
+    }
+  },
+  actions: {
+    loadSlides({ commit }) {
+      try {
+        const slides = carouselService.getCarouselData()
+        commit({ type: 'setSlides', slides })
+        return slides
+      } catch {
+        console.error('Couldnt load slides')
+      }
     }
   }
 })

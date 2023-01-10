@@ -1,11 +1,10 @@
 <template>
   <header class="app-header">
     <section class="container">
-      <h1 class="logo">
+      <div class="logo">
         <img src="https://ontopo.cz/assets/img/logo/blue.png" />
-      </h1>
+      </div>
       <nav>
-        <!-- <a @click="this.$router.push('/')">Home</a> -->
         <a @click="toggleNav()">
           <img src="https://www.ontopo.co.il/icons/language.svg" alt="" />
         </a>
@@ -30,7 +29,6 @@ export default {
   },
   methods: {
     setLang(lang) {
-      console.log(lang)
       this.$store.commit({ type: 'setLang', lang })
       this.isNavOpen = false
     },

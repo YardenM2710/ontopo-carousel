@@ -1,12 +1,11 @@
 <template>
   <div class="container">
-    <Carousel :lang="lang" :slides="slides" />
+    <Carousel :slides="slides" />
   </div>
 </template>
 
 <script>
 import Carousel from '../components/Carousel.vue'
-import { carouselService } from '../services/carousel.service.js'
 export default {
   data() {
     return {
@@ -14,13 +13,9 @@ export default {
     }
   },
   async created() {
-    this.slides = await carouselService.getCarouselData()
+    this.slides = await this.$store.dispatch('loadSlides')
   },
-  computed: {
-    lang() {
-      return this.$store.getters.lang
-    }
-  },
+  computed: {},
   components: { Carousel }
 }
 </script>

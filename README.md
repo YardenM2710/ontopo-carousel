@@ -3,6 +3,8 @@
 
 This is an image carousel i made in vue3 & scss without using UI libraries (Material, Quasar, Bootstrap, etc...)
 
+The Carousel data is being fetched from a Node js server
+
 Enjoy :)
 
 

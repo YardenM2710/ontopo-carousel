@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transitionEffect">
+  <Transition :name="transitionEffect">
     <article :key="currSlide" class="carousel-item" :class="getSlideDir" v-if="currSlide === index">
       <img :src="slide.imgUrl" />
 
@@ -9,16 +9,16 @@
           <a :href="slide.path">{{ formattedBtn }}</a>
         </div>
       </div>
-      <div class="img-dots">
+      <!-- <div class="slide-indicator">
         <span v-for="dot in length" :key="dot" @click="$emit('setSlide', dot)" :class="{ selected: isSelected(dot) }"></span>
-      </div>
+      </div> -->
     </article>
-  </transition>
+  </Transition>
 </template>
 
 <script>
 export default {
-  props: ['slide', 'index', 'currSlide', 'transitionName', 'lang', 'direction', 'length'],
+  props: ['slide', 'index', 'currSlide', 'lang', 'direction', 'length'],
   data() {
     return {}
   },
